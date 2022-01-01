@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jaycode.hero">
+    package="com.wonder.jw">
    <application
-        android:label="hero"
+        android:label="JW Company"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
