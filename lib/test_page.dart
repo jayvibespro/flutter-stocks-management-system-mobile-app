@@ -18,13 +18,10 @@ class _TestPageState extends State<TestPage> {
           const SliverAppBar(
 //            leading: Text('khan leading'),
 //            bottom: ,
-            title: Hero(
-              tag: 'splash',
-              child: Text('WONDER STORE'),
-            ),
-            actions: <Widget>[
+            title: Text('WONDER COMPANY'),
+            actions: [
               IconButton(
-                icon: const Icon(Icons.add_circle),
+                icon: const Icon(Icons.search),
                 tooltip: 'Add new entry',
               ),
               Padding(

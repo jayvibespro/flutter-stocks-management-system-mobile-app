@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hero/screens/search_screen.dart';
 
-import '/screens/search_screen.dart';
 import '/screens/splash_screen.dart';
 
 customAppBar(context) {
   return AppBar(
-    title: Hero(
-      tag: 'splash',
-      child: Text('WONDER STORE'),
-    ),
+    title: Text('wonder Company'),
     actions: [
       Padding(
         padding: const EdgeInsets.all(16.0),

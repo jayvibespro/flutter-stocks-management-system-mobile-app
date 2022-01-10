@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hero/screens/stock_screen.dart';
 
 import '/screens/advance_screen.dart';
 import '/screens/all_customers_screen.dart';
@@ -14,8 +14,8 @@ class SideNavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Wonder Store'),
-            accountEmail: Text('wonderstore001@gmail.com'),
+            accountName: Text('Wonder Company'),
+            accountEmail: Text('wondercom001@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
@@ -106,6 +106,10 @@ class SideNavBar extends StatelessWidget {
                 ),
               ),
             ),
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => StockScreen()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.description),

@@ -63,7 +63,7 @@ class _PopupCardState extends State<PopupCard> {
                   'Anayo',
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
-                    value: value,
+                    value: dropdownValue,
                     child: Text(value),
                   );
                 }).toList(),

@@ -18,7 +18,6 @@ class SearchPage extends StatelessWidget {
             child: TextField(
               controller: clearer,
               autofocus: true,
-              textAlign: TextAlign.center,
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   suffixIcon: IconButton(

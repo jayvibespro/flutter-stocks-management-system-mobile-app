@@ -1,4 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 
 import '/screens/advance_screen.dart';
@@ -9,10 +11,28 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool isConnected = false;
+
+  StreamSubscription sub;
+
   @override
   void initState() {
     super.initState();
     _splashScreenHome();
+    sub = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      setState(() {
+        isConnected = (result != ConnectivityResult.none);
+      });
+    });
+  }
+
+  @override
+  dispose() {
+    super.dispose();
+
+    sub.cancel();
   }
 
   void _splashScreenHome() async {

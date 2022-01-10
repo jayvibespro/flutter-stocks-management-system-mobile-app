@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '/components/custom_appbar.dart';
-import '/components/popup_card.dart';
 import '/components/side_navbar.dart';
 
 class AllUsersScreen extends StatefulWidget {
@@ -156,13 +155,14 @@ class _AllUsersScreenState extends State<AllUsersScreen> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-              context: context, builder: (BuildContext context) => PopupCard());
-          setState(() {});
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+//        onPressed: () {
+//          Navigator.of(context).push(HeroDialogRoute(builder: (context) {
+//            return AdvancePopupCard();
+//          }));
+//        },
+        icon: Icon(Icons.add),
+        label: Text('New Customer'),
       ),
     );
   }
