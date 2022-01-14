@@ -39,6 +39,14 @@ class SideNavBar extends StatelessWidget {
             trailing: Text('Tsh 10,456,450/='),
           ),
           ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () {
+//              Navigator.pushReplacement(context,
+//                  MaterialPageRoute(builder: (context) => AdvanceScreen()));
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.event_available),
             title: Text('Advance'),
             onTap: () {
@@ -115,12 +123,10 @@ class SideNavBar extends StatelessWidget {
             leading: Icon(Icons.description),
             title: Text('Pumba'),
           ),
-          Divider(),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: Icon(Icons.people),
+            title: Text('Funga Hesabu'),
           ),
-          Divider(),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Exit'),
@@ -132,9 +138,6 @@ class SideNavBar extends StatelessWidget {
               alignment: Alignment.center,
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 10,
-                  ),
                   Divider(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

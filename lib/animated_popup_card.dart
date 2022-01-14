@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pattern_formatter/pattern_formatter.dart';
 
 import 'custom_rect_tween.dart';
 
@@ -149,6 +150,7 @@ class _MyPopupCardState extends State<MyPopupCard> {
                                 padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                                 child: TextField(
                                   textAlign: TextAlign.center,
+                                  inputFormatters: [ThousandsFormatter()],
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
@@ -168,6 +170,7 @@ class _MyPopupCardState extends State<MyPopupCard> {
                                 padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
                                 child: TextField(
                                   textAlign: TextAlign.center,
+                                  inputFormatters: [ThousandsFormatter()],
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(

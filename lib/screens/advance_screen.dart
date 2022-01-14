@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hero/components/animated_search_bar.dart';
 import 'package:hero/components/custom_appbar.dart';
+import 'package:vibration/vibration.dart';
 
 import '/components/side_navbar.dart';
 import '../animated_popup_card.dart';
@@ -152,72 +153,83 @@ class _AdvanceScreenState extends State<AdvanceScreen> {
                           ),
                           Column(
                             children: snapshot.data.docs.map((doc) {
-                              return Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['date']}'),
+                              return GestureDetector(
+                                child: Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 8.0),
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['date']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['seller']}'),
+                                        Expanded(
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['seller']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['buyer']}'),
+                                        Expanded(
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['buyer']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['status']}'),
+                                        Expanded(
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['status']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['price']}'),
+                                        Expanded(
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['price']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Container(
-                                            child: Text('${doc['amount']}'),
+                                        Expanded(
+                                          child: Center(
+                                            child: Container(
+                                              child: Text('${doc['amount']}'),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Container(
-                                        child: Center(
-                                          child: GestureDetector(
-                                            child: Icon(Icons.more_vert),
-                                            onTap: () {
-                                              Navigator.of(context).push(
-                                                  HeroDialogRoute(
-                                                      builder: (context) {
-                                                return EditInterfacePopupCard();
-                                              }));
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+//                                        Container(
+//                                          child: Center(
+//                                            child: GestureDetector(
+//                                              child: Icon(Icons.more_vert),
+//                                              onTap: () {
+//                                                Navigator.of(context).push(
+//                                                    HeroDialogRoute(
+//                                                        builder: (context) {
+//                                                  return EditInterfacePopupCard();
+//                                                }));
+//                                              },
+//                                            ),
+//                                          ),
+//                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
+                                onLongPress: () async {
+                                  Navigator.of(context)
+                                      .push(HeroDialogRoute(builder: (context) {
+                                    return EditInterfacePopupCard();
+                                  }));
+                                  if (await Vibration.hasVibrator()) {
+                                    Vibration.vibrate(duration: 100);
+                                  }
+                                },
                               );
                             }).toList(),
                           ),

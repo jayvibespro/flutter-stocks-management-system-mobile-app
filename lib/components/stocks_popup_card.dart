@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pattern_formatter/pattern_formatter.dart';
 
 DateTime currentDate = DateTime.now();
 DateFormat formatter = DateFormat('dd/MM/yyyy');
@@ -130,6 +131,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Gunia',
                                   ),
@@ -154,6 +156,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Nauli',
                                   ),
@@ -173,6 +176,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Tumizi',
                                   ),
@@ -197,6 +201,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Machine',
                                   ),
@@ -216,6 +221,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'kago',
                                   ),
@@ -240,6 +246,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Kamba',
                                   ),
@@ -259,6 +266,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Changanya',
                                   ),
@@ -282,6 +290,7 @@ class _MyStocksPopupCardState extends State<MyStocksPopupCard> {
                                   textAlign: TextAlign.center,
                                   cursorHeight: 30.0,
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [ThousandsFormatter()],
                                   decoration: InputDecoration(
                                     hintText: 'Deni',
                                   ),
